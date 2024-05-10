@@ -11,9 +11,20 @@ export interface PicObject {
 }
 
 export interface GalleryItem {
+  id: number;
+  webformatURL: string;
+  largeImageURL: string;
+  tags: string;
   [key: string]: number | string;
 }
+export interface ButtonProps {
+  onClick(): void;
+}
 
+export interface ModalProps {
+  onClose(): void;
+  children: JSX.Element;
+}
 export interface SearchbarProps {
   onSubmit(searchText: string): void;
 }
@@ -24,7 +35,6 @@ export interface ImageGalleryProps {
 }
 
 export interface ImageGalleryItemProps {
-  key: string;
   webformatURL: string;
   largeImageURL: string;
   tags: string;

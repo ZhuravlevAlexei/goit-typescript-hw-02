@@ -1,6 +1,6 @@
-import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
-import { ImageGalleryProps } from "../App.types";
-import css from "./ImageGallery.module.css";
+import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
+import { ImageGalleryProps } from '../App.types';
+import css from './ImageGallery.module.css';
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({
   gallery,
