@@ -1,3 +1,19 @@
+// import { AxiosHeaders } from "axios";
+
+export interface AnswerWithData {
+  // config: {};
+  // headers: AxiosHeaders;
+  // request: XMLHttpRequest;
+
+  data: {
+    total: number;
+    totalHits: number;
+    hits: GalleryItem[];
+  };
+  statusText: string;
+  status: number;
+}
+
 export interface Status {
   IDLE: string;
   PENDING: string;

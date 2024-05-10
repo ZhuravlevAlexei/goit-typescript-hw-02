@@ -7,8 +7,8 @@ import { Button } from "./Button/Button";
 import { Loader } from "./Loader/Loader";
 import Modal from "./Modal/Modal";
 
-import { GalleryItem, Status, PicObject } from "./App.types";
-import { AxiosResponse } from "axios";
+import { GalleryItem, Status, PicObject, AnswerWithData } from "./App.types";
+// import { AxiosResponse } from "axios";
 
 const STATUS_STAGE: Status = {
   IDLE: "idle",
@@ -54,9 +54,9 @@ const App = () => {
     if (!searchText) {
       return;
     }
-    setStatus(STATUS_STAGE.PENDING);
+
     getPhotosByAxios(searchText, paginationPage)
-      .then((resp: AxiosResponse) => {
+      .then((resp: AnswerWithData) => {
         if (resp.status !== 200) {
           throw new Error(resp.statusText);
         } else {
