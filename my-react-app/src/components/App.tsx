@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import css from "./App.module.css";
 import { getPhotosByAxios } from "../services/library";
 import Searchbar from "./Searchbar/Searchbar";
@@ -8,9 +7,10 @@ import { Button } from "./Button/Button";
 import { Loader } from "./Loader/Loader";
 import Modal from "./Modal/Modal";
 
-import { status } from "./App.types";
+import { GalleryItem, Status, PicObject } from "./App.types";
+import { AxiosResponse } from "axios";
 
-const STATUS_STAGE: status = {
+const STATUS_STAGE: Status = {
   IDLE: "idle",
   PENDING: "pending",
   RESOLVED: "resolved",
@@ -18,9 +18,9 @@ const STATUS_STAGE: status = {
 };
 
 const App = () => {
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState<string>("");
   const [status, setStatus] = useState<string>(STATUS_STAGE.IDLE);
-  const [gallery, setGallery] = useState([]);
+  const [gallery, setGallery] = useState<GalleryItem[]>([]);
   const [paginationPage, setPaginationPage] = useState<number>(0);
   const [totalHits, setTotalHits] = useState<number>(0);
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -34,13 +34,18 @@ const App = () => {
       } else if (paginationPage > 1) {
         const galleryElement: HTMLBodyElement | null =
           document.querySelector("#forScroll");
-        const { height: cardHeight } =
-          galleryElement.firstElementChild.getBoundingClientRect();
-        const scrollY = (cardHeight + 16) * 2;
-        window.scrollBy({
-          top: scrollY,
-          behavior: "smooth",
-        });
+        if (galleryElement !== null) {
+          const firstChild: Element | null = galleryElement.firstElementChild;
+          if (firstChild !== null) {
+            const { height: cardHeight }: DOMRect =
+              firstChild.getBoundingClientRect();
+            const scrollY: number = (cardHeight + 16) * 2;
+            window.scrollBy({
+              top: scrollY,
+              behavior: "smooth",
+            });
+          }
+        }
       }
     }
   }, [gallery, paginationPage]);
@@ -51,7 +56,7 @@ const App = () => {
     }
     setStatus(STATUS_STAGE.PENDING);
     getPhotosByAxios(searchText, paginationPage)
-      .then((resp) => {
+      .then((resp: AxiosResponse) => {
         if (resp.status !== 200) {
           throw new Error(resp.statusText);
         } else {
@@ -64,7 +69,7 @@ const App = () => {
           }
         }
       })
-      .catch((error) => {
+      .catch((error: Error) => {
         console.error(error);
       })
       .finally(() => {
@@ -72,27 +77,27 @@ const App = () => {
       });
   }, [searchText, paginationPage]);
 
-  const createSearchText = (searchText) => {
+  const createSearchText = (searchText: string): void => {
     setSearchText(searchText.trim());
     setStatus(STATUS_STAGE.IDLE);
     setPaginationPage(1);
   };
 
-  const onLoadMore = () => {
+  const onLoadMore = (): void => {
     setPaginationPage(paginationPage + 1);
   };
 
-  const onCloseModal = () => {
+  const onCloseModal = (): void => {
     setShowModal(false);
   };
 
-  const onOpenModal = (picObject) => {
+  const onOpenModal = (picObject: PicObject): void => {
     setShowModal(true);
     setPicUrl(picObject.picUrl);
     setPicTags(picObject.picTags);
   };
 
-  const totalPages = Math.ceil(totalHits / 12);
+  const totalPages: number = Math.ceil(totalHits / 12);
 
   return (
     <div className={css.App}>
@@ -113,14 +118,6 @@ const App = () => {
       )}
     </div>
   );
-};
-
-App.propTypes = {
-  searchText: PropTypes.string,
-  picObjectForModal: PropTypes.objectOf({
-    picUrl: PropTypes.string.isRequired,
-    picTags: PropTypes.string.isRequired,
-  }),
 };
 
 export default App;

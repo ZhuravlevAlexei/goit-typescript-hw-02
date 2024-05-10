@@ -1,8 +1,11 @@
-import css from "./ImageGallery.module.css";
 import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
-import PropTypes from "prop-types";
+import { ImageGalleryProps } from "../App.types";
+import css from "./ImageGallery.module.css";
 
-const ImageGallery = ({ gallery, onOpenModal }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({
+  gallery,
+  onOpenModal,
+}) => {
   return (
     <>
       <ul className={css.imageGallery} id="forScroll">
@@ -20,11 +23,6 @@ const ImageGallery = ({ gallery, onOpenModal }) => {
       </ul>
     </>
   );
-};
-
-ImageGallery.propTypes = {
-  gallery: PropTypes.array.isRequired,
-  onOpenModal: PropTypes.func.isRequired,
 };
 
 export default ImageGallery;

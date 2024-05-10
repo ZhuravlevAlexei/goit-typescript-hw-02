@@ -1,17 +1,24 @@
+import React from "react";
 import { useState } from "react";
-import PropTypes from "prop-types";
+
+import { SearchbarProps } from "../App.types";
 import css from "./Searchbar.module.css";
 import sprite from "../../assets/search.svg";
 
-const Searchbar = ({ onSubmit }) => {
-  const [searchInputText, setSearchInputText] = useState("");
+const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
+  const [searchInputText, setSearchInputText] = useState<string>("");
 
-  const handleSearchbarSubmit = (evt) => {
+  const handleSearchbarSubmit = (evt: React.FormEvent): void => {
     evt.preventDefault();
     onSubmit(searchInputText);
   };
 
-  const handleSearchbarInputChange = ({ target: { value } }) => {
+  // const handleSearchbarInputChange = ({ target: { value } }): void => {
+  //   setSearchInputText(value);
+  // };
+
+  const handleSearchbarInputChange = ({ target: { value } }): void => {
+    evt.preventDefault();
     setSearchInputText(value);
   };
 
