@@ -3,8 +3,7 @@ import { useState } from "react";
 
 import { SearchbarProps } from "../App.types";
 import css from "./Searchbar.module.css";
-// import sprite from '../../assets/search.svg';
-import sprite from "../search.svg";
+import sprite from "../../assets/search.svg";
 
 const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
   const [searchInputText, setSearchInputText] = useState<string>("");
