@@ -5,7 +5,7 @@ import { SearchbarProps } from "../App.types";
 import css from "./Searchbar.module.css";
 
 //tries with svg
-// import sprite from "../../assets/search.svg";
+import sprite from "../../assets/search.svg";
 // import reactSvg from "../../assets/react.svg";
 // import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
 // import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
@@ -63,14 +63,14 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
               </svg>
               {/*end good dont touch*/}
               {/*local only! cant see at Vercel */}
-              {/* <svg
+              <svg
                 className={css.searchBtnIcon}
                 fill="red"
                 width="48"
                 height="48"
               >
                 <use href={`${sprite}#search`}></use>
-              </svg> */}
+              </svg>
               {/*local only! cant see at Vercel */}
               {/* <img src={magnifierSvg} width={48} height={48} alt="" />
               <img src={magnifierPng} width={48} height={48} alt="" /> */}
