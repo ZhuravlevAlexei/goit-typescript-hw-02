@@ -5,12 +5,12 @@ import { SearchbarProps } from "../App.types";
 import css from "./Searchbar.module.css";
 
 //tries with svg
-import sprite from "../../assets/search.svg";
+// import sprite from "../../assets/search.svg";
 // import reactSvg from "../../assets/react.svg";
-import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
-import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
+// import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
+// import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
 
-import { HandySvg } from "@handy-ones/handy-svg";
+// import { HandySvg } from "@handy-ones/handy-svg";
 // import { ReactComponent as MyMagnifire } from "../../shared/searchCopied.svg";
 // import { ReactComponent } from "../../assets/free-icon-loupe-751463-32x32.svg"; //не работает
 
