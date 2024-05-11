@@ -84,9 +84,9 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
                 <use href={magnifierSvg}></use>
               </svg>
               {/*нормально не работает, размеры ни к черту*/}
-              <div className={css.searchBtnIcon}>
+              {/* <div className={css.searchBtnIcon}>
                 <HandySvg src={magnifierSvg} width="48px" height="48px" />
-              </div>
+              </div> */}
               {/* experiment */}
             </div>
           </button>
@@ -102,7 +102,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
           />
         </form>
       </header>
-      <HandySvg src={magnifierSvg} width="48px" height="48px" />
+      {/* <HandySvg src={magnifierSvg} width="48px" height="48px" /> */}
 
       {/* <p> SVG below</p>
       
