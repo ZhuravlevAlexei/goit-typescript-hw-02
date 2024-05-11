@@ -63,26 +63,26 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
               </svg>
               {/*end good dont touch*/}
               {/*local only! cant see at Vercel */}
-              <svg
+              {/* <svg
                 className={css.searchBtnIcon}
                 fill="red"
                 width="48"
                 height="48"
               >
                 <use href={`${sprite}#search`}></use>
-              </svg>
+              </svg> */}
               {/*local only! cant see at Vercel */}
-              <img src={magnifierSvg} width={48} height={48} alt="" />
-              <img src={magnifierPng} width={48} height={48} alt="" />
+              {/* <img src={magnifierSvg} width={48} height={48} alt="" />
+              <img src={magnifierPng} width={48} height={48} alt="" /> */}
               {/*local only! cant see at Vercel */}
-              <svg
+              {/* <svg
                 className={css.searchBtnIcon}
                 fill="yellow"
                 width="28"
                 height="28"
               >
                 <use href={`${sprite}#search`}></use>
-              </svg>
+              </svg> */}
               {/*нормально не работает, размеры ни к черту*/}
               {/* <HandySvg src={magnifierSvg} /> */}
               {/* experiment */}
@@ -100,7 +100,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
           />
         </form>
       </header>
-      <HandySvg src={magnifierSvg} />
+      {/* <HandySvg src={magnifierSvg} /> */}
 
       {/* <p> SVG below</p>
       
