@@ -5,10 +5,10 @@ import { SearchbarProps } from "../App.types";
 import css from "./Searchbar.module.css";
 
 //tries with svg
-import sprite from "../../assets/search.svg";
-// import reactSvg from "../../assets/react.svg";
-// import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
-// import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
+
+//import sprite from "../../assets/search.svg";
+import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
+import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
 
 // import { HandySvg } from "@handy-ones/handy-svg";
 // import { ReactComponent as MyMagnifire } from "../../shared/searchCopied.svg";
@@ -46,9 +46,9 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
                 height: "48px",
               }}
             >
-              {/*it works! can see emojie at local & Vercel*/}
+              {/*it works! can see emojie at local & Verce - proved*/}
               🔍
-              {/*it works can see svg (embedded in code) at local & Vercel*/}
+              {/*it works can see svg (embedded in code) at local & Vercel- proved*/}
               <svg
                 // xmlns="http://www.w3.org/2000/svg"
                 fill="blue"
@@ -62,18 +62,18 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
                 </g>
               </svg>
               {/*end good dont touch*/}
-              {/*local only! cant see at Vercel */}
-              <svg
+              {/*local only! cant see at Vercel - proved*/}
+              {/* <svg
                 className={css.searchBtnIcon}
                 fill="red"
                 width="48"
                 height="48"
               >
                 <use href={`${sprite}#search`}></use>
-              </svg>
+              </svg> */}
               {/*local only! cant see at Vercel */}
-              {/* <img src={magnifierSvg} width={48} height={48} alt="" />
-              <img src={magnifierPng} width={48} height={48} alt="" /> */}
+              <img src={magnifierSvg} width={48} height={48} alt="" />
+              <img src={magnifierPng} width={48} height={48} alt="" />
               {/*local only! cant see at Vercel */}
               {/* <svg
                 className={css.searchBtnIcon}
