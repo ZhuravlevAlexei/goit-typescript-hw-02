@@ -4,7 +4,6 @@ import { useState } from "react";
 import { SearchbarProps } from "../App.types";
 import css from "./Searchbar.module.css";
 import sprite from "../../assets/search.svg";
-import magn from "../../assets/free-icon-loupe-751463.svg";
 
 const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
   const [searchInputText, setSearchInputText] = useState<string>("");
@@ -44,9 +43,6 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
             🔍
             <svg className={css.searchBtnIcon} width="28" height="28">
               <use href={`${sprite}#search`}></use>
-            </svg>
-            <svg className={css.searchBtnIcon} width="28" height="28">
-              <use href={`${magn}`}></use>
             </svg>
           </div>
         </button>
