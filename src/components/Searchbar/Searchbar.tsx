@@ -10,7 +10,7 @@ import sprite from "../../assets/search.svg";
 import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
 import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
 
-// import { HandySvg } from "@handy-ones/handy-svg";
+import { HandySvg } from "@handy-ones/handy-svg";
 // import { ReactComponent as MyMagnifire } from "../../shared/searchCopied.svg";
 // import { ReactComponent } from "../../assets/free-icon-loupe-751463-32x32.svg"; //не работает
 
@@ -74,7 +74,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
               >
                 <use href={`${sprite}#search`}></use>
               </svg>
-              {/*local only! cant see at Vercel*/}
+              {/*local only! cant see at Vercel - proved*/}
               <svg
                 className={css.searchBtnIcon}
                 fill="red"
@@ -102,11 +102,11 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
           />
         </form>
       </header>
-      {/* <HandySvg src={magnifierSvg} width="48px" height="48px" /> */}
 
-      {/* <p> SVG below</p>
-      
-      <svg
+      <p> SVG below</p>
+      <HandySvg src={magnifierSvg} width="48px" height="48px" />
+
+      {/*<svg
         xmlns="http://www.w3.org/2000/svg"
         width="48"
         height="48"
