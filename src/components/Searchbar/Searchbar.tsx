@@ -7,12 +7,12 @@ import css from "./Searchbar.module.css";
 //tries with svg
 import sprite from "../../assets/search.svg";
 // import reactSvg from "../../assets/react.svg";
-// import magnifierPng from "../../assets/free-icon-loupe-751463.png";
+import magnifierPng from "../../assets/free-icon-loupe-751463-32x32.png";
 import magnifierSvg from "../../assets/free-icon-loupe-751463-32x32.svg";
 
 import { HandySvg } from "@handy-ones/handy-svg";
 // import { ReactComponent as MyMagnifire } from "../../shared/searchCopied.svg";
-// import { MyMagnifire } from "../../shared/index";
+// import { ReactComponent } from "../../assets/free-icon-loupe-751463-32x32.svg"; //не работает
 
 const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
   const [searchInputText, setSearchInputText] = useState<string>("");
@@ -72,8 +72,8 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
                 <use href={`${sprite}#search`}></use>
               </svg>
               {/*local only! cant see at Vercel */}
-              {/* <img src={magnifierSvg} width={48} height={48} alt="" /> */}
-              {/* <img src={magnifierPng} width={48} height={48} alt="" /> */}
+              <img src={magnifierSvg} width={48} height={48} alt="" />
+              <img src={magnifierPng} width={48} height={48} alt="" />
               {/*local only! cant see at Vercel */}
               <svg
                 className={css.searchBtnIcon}
@@ -85,7 +85,6 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
               </svg>
               {/*нормально не работает, размеры ни к черту*/}
               {/* <HandySvg src={magnifierSvg} /> */}
-              {/* <MyMagnifire /> */}
               {/* experiment */}
             </div>
           </button>
@@ -102,6 +101,7 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSubmit }) => {
         </form>
       </header>
       <HandySvg src={magnifierSvg} />
+
       {/* <p> SVG below</p>
       
       <svg
